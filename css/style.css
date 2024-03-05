@@ -7,7 +7,7 @@ body .container {
     width: 90% !important;
 }
 .banner-section .container {
-    background-image: url(/images/bgbanner.png);
+    background-image: url(../images/bgbanner.png);
     background-position: bottom;
     background-repeat: no-repeat;
 }
