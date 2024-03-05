@@ -84,3 +84,142 @@ body .container {
     transition: .3s;
     border: 1px solid transparent;
 }
+.posts-container:hover {
+    border-color: #797DFC;
+    background: #F2F2FF;
+}
+div.posts-container {
+    display: grid;
+    grid-template-columns: 12% 88%;
+}
+.post-content-area {
+    padding-left: 30px;
+}
+.author-profile {
+    position: relative;
+}
+.author-profile img {
+    border-radius: 16px;
+    width: 100%;
+}
+.author-profile .active-status {
+    width: 22px;
+    height: 22px;
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ddd;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.author-profile .active-status.true {
+    background: #10B981;
+}
+.author-profile .active-status.false {
+    background: #FF3434;
+}
+.post-meta-bottom i {
+    color: #6C6C7D !important;
+    margin-right: 10px;
+}
+.post-meta-bottom {
+    font-size: 18px;
+}
+.marked-post-button {
+    font-size: 18px;
+    background: #10B981;
+    color: #fff !important;
+    border-radius: 50%;
+    text-align: center;
+    height: 31px;
+    width: 31px;
+}
+.marked-post-button i {
+    color: #fff !important;
+    margin-right: 0 !important;
+}
+#latest-posts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.post-content-inner {
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    padding: 20px;
+}
+.latest-post-author {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+.latest-post-author img {
+    border-radius: 50%;
+    width: 44px;
+}
+.post-content {
+    margin-top: 20px;
+}
+.post-thumbnail img {
+    width: 100%;
+    border-radius: 20px;
+}
+@media all and (max-width: 767px) {
+    #latest-posts-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+    div.posts-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+        padding: 20px;
+    }
+    .post-content-area {
+        padding-left: 0;
+    }
+    .author-profile {
+        max-width: 100px;
+    }
+    .header-right-icons a:last-child {
+        display: none !important;
+    }
+}
+@media all and (max-width: 980px) {
+    .posts-sidebar .post-left-area {
+        width: 100%;
+        float: none;
+        padding-right: 0;
+    }
+    .post-right-area {
+        width: 100%;
+        float: none;
+    }
+}
+#markasread {
+    margin-top: 10px;
+}
+#markasread div {
+    background: #fff;
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    margin-bottom: 10px;
+}
+#markasread div span {
+    display: flex;
+    align-items: center;
+}
+#markasread div span i {
+    margin-right: 5px;
+}
+#searchbutton[disabled] {
+    cursor: not-allowed;
+    background-color: #797dfcb0;
+}
+#searchposts {
+    display: none;
+}
