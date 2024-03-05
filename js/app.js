@@ -65,5 +65,45 @@ const loadAllPosts = async () => {
     toggleLoader(false);
 }
 
+// Load Latest posts data 
+const loadLatestPostsdata = async () => {
+    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const data = await response.json();
+    const latestPosts = data;
+    // console.log(latestPosts);
 
+    // Step 1: Get the latest container Div by Tag
+    const latestPostsContainer = document.getElementById('latest-posts-container');
+    // loop forEach
+    latestPosts.forEach(latestPost => {
+        // console.log(latestPost);
+        // Step 2: Create div in the latest post container
+        const latestSingle = document.createElement('div');
+        latestSingle.classList = 'post-content-inner';
+
+        // Step 3: Set inner HTML
+        latestSingle.innerHTML = `
+            <div class="post-thumbnail">
+                <img src="${latestPost.cover_image}" alt="">
+            </div>
+            <div class="post-content">
+                <p class="mb-2"><i class="fa-solid fa-calendar-days"></i> <span>${latestPost?.author?.posted_date || 'No publish date'}</span></p>
+                <h1 class="font-extrabold text-[18px] mb-2">${latestPost.title}</h1>
+                <p>${latestPost.description.slice(0, 100)}</p>
+            </div>
+            <div class="latest-post-author">
+                <div>
+                    <img src="${latestPost.profile_image}" alt="">
+                </div>
+                <div>
+                    <h3 class="font-extrabold text-base">${latestPost.author.name}</h3>
+                    <p>${latestPost?.author?.designation || 'Unknown'}</p>
+                </div>
+            </div>
+        `
+        latestPostsContainer.appendChild(latestSingle);
+    })
+}
+
+loadLatestPostsdata();
 loadAllPosts();
